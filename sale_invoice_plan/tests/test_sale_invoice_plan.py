@@ -79,7 +79,7 @@ class TestSaleInvoicePlan(common.TestSaleCommon):
                             "name": cls.product_order.name,
                             "product_id": cls.product_order.id,
                             "product_uom_qty": 1,
-                            "product_uom": cls.product_order.uom_id.id,
+                            "product_uom_id": cls.product_order.uom_id.id,
                             "price_unit": cls.product_order.list_price,
                         },
                     )
@@ -305,7 +305,7 @@ class TestSaleInvoicePlan(common.TestSaleCommon):
                             "name": "SO-Product-NEW",
                             "product_id": self.product_order.id,
                             "product_uom_qty": 1,
-                            "product_uom": self.product_order.uom_id.id,
+                            "product_uom_id": self.product_order.uom_id.id,
                             "price_unit": 280.0,
                         },
                     )

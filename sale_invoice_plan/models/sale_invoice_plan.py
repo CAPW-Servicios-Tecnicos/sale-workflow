@@ -205,7 +205,7 @@ class SaleInvoicePlan(models.Model):
             line.write({"quantity": -percent / 100})
         else:
             plan_qty = self._get_plan_qty(order_line, percent)
-            prec = order_line.product_uom.rounding
+            prec = order_line.product_uom_id.rounding
             if plan_qty:
                 plan_qty = float_round(plan_qty, precision_rounding=prec)
             if (
