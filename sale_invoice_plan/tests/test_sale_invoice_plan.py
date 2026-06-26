@@ -2,7 +2,6 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 import logging
 
-from odoo import fields
 from odoo.exceptions import UserError, ValidationError
 from odoo.tests import Form, tagged
 
@@ -275,7 +274,7 @@ class TestSaleInvoicePlan(common.TestSaleCommon):
             "active_ids": [self.so_service.id],
             "all_remain_invoices": False,
         }
-        first_order_line = fields.first(self.so_service.order_line)
+        first_order_line = self.so_service.order_line[:1]
         first_order_line.product_uom_qty = 10
         f = Form(self.env["sale.create.invoice.plan"])
         # Create Invoice Plan 5 installment

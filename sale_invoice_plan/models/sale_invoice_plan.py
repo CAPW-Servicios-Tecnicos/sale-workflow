@@ -198,9 +198,9 @@ class SaleInvoicePlan(models.Model):
 
     def _update_new_quantity(self, line, percent):
         """Hook function"""
-        if not len(line.sale_line_ids) >= 0:
+        if not line.sale_line_ids:
             raise UserError(self.env._("No matched order line for invoice line"))
-        order_line = fields.first(line.sale_line_ids)
+        order_line = line.sale_line_ids[:1]
         if order_line.is_downpayment:  # based on 1 unit
             line.write({"quantity": -percent / 100})
         else:
