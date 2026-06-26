@@ -153,7 +153,8 @@
                         ('plan_date', '&lt;=', context_today().strftime('%Y-%m-%d'))
                     ]"
                 />
-                <group expand="0" string="Group By">
+                <separator/>
+                <group>
                     <filter
                         string="Customer"
                         name="groupby_customer"
